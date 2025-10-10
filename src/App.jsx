@@ -5,6 +5,7 @@ import XSSGame from "./components/games/XSS/XSSGame";
 import EncryptionGame from "./components/games/Encryption/EncryptionGame";
 import PasswordAttackGame from "./components/games/PasswordAttack/PasswordAttackGame";
 import PhishingGame from "./components/games/Phishing/PhishingGame";
+import ChallengeMode from "./components/games/Challenge/ChallengeMode";
 export default function App() {
   const [active, setActive] = React.useState("SQL");
   const renderGame = () => {
@@ -19,13 +20,15 @@ export default function App() {
         return <PasswordAttackGame />;
       case "PHISHING":
         return <PhishingGame />;
+      case "CHALLENGE":
+        return <ChallengeMode />;
       default:
         return <SQLInjectionGame />;
     }
   };
   return (
     <>
-      <div className="h-screen bg-blue-50 text-gray-800">
+      <div className="min-h-screen bg-blue-50 text-gray-800">
         <div className="flex ">
           <Navbar active={active} setActive={setActive} />
           <div className="max-w-4xl mx-auto mt-8 p-4">

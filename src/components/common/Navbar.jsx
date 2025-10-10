@@ -7,8 +7,8 @@ import {
   FaEnvelope,
   FaChevronLeft,
   FaChevronRight,
-} from "react-icons/fa"; // React Icons
-
+  FaMapMarked,
+} from "react-icons/fa";
 export default function Sidebar({ active, setActive }) {
   const [collapsed, setCollapsed] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -19,6 +19,7 @@ export default function Sidebar({ active, setActive }) {
     { key: "ENC", label: "Encryption", icon: FaLock },
     { key: "PASS", label: "Password Attack", icon: FaKey },
     { key: "PHISHING", label: "Phishing", icon: FaEnvelope },
+    { key: "CHALLENGE", label: "Challenge Mode", icon: FaMapMarked },
   ];
 
   // Handle responsive collapse
